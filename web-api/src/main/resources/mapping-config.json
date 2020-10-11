@@ -1,0 +1,25 @@
+{
+	"topic_event_mapping":[
+		{
+			"event_type": "clicks",
+			"topic_name": "clicks_topic"
+		},
+		{
+			"event_type": "impressions",
+			"topic_name": "impressions_topic"
+			
+		}
+	],
+	"filename_topic_mapping": [
+		{
+			"topic_name": "clicks_topic",
+			"filename_pattern": "clicks"
+			
+		},
+		{
+			"topic_name": "impressions_topic",
+			"filename_pattern": "impressions"
+			
+		}
+	]
+}
