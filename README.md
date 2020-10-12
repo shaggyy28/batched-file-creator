@@ -43,8 +43,10 @@ this file contains the mapping for event, topic, fileName,
 - Request_Url: http://localhost:8080/post-data
 - Request-Type: POST 
 - Content: json
+
 `event_type` key denotes which topic data should be injected to.
-`payload` object inject in the topic
+
+`payload` object injected in the topic
 ``` json
     {
         "payload":{
