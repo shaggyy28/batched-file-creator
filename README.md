@@ -40,9 +40,9 @@ this file contains the mapping for event, topic, fileName,
 }
 ```
 ### Webhook
-Request_Url: http://localhost:8080/post-data
-Request-Type: POST
-Content: json
+- Request_Url: http://localhost:8080/post-data
+- Request-Type: POST 
+- Content: json
 `event_type` key denotes which topic data should be injected to.
 `payload` object inject in the topic
 ``` json
@@ -56,7 +56,7 @@ Content: json
     }
 ```
 ### Testing
-Two clicks and impressions files with dummy data for testing
+clicks and impressions files with dummy data in `scripts` folder
 `loadtest` script can be used to post data to webhook
 __Usage__:
 ``` 
