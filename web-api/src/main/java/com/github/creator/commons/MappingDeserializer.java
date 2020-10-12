@@ -17,13 +17,13 @@ public class MappingDeserializer extends JsonDeserializer<Map<String, String>> {
 	@Override
 	public Map<String, String> deserialize(JsonParser jp, DeserializationContext ctxt)
 			throws IOException {
-		JsonNode tree = (JsonNode)jp.readValueAsTree();
+		JsonNode tree = jp.readValueAsTree();
 		Map<String, String> map = new HashMap<>();
 		for(JsonNode arr : tree) {
-			map.put(
-					arr.has("event_type") ? arr.get("event_type").asText() : arr.get("topic_name").asText(),
-					arr.has("topic_name") ? arr.get("topic_name").asText() : arr.get("filename_pattern").asText()
-			);
+			if(arr.has("event_type") && arr.has("topic_name"))
+				map.put(arr.get("event_type").asText(), arr.get("topic_name").asText());
+			else if(arr.has("topic_name") && arr.has("filename_pattern"))
+				map.put(arr.get("topic_name").asText(), arr.get("filename_pattern").asText());
 		}
 		return map;
 	}

@@ -13,12 +13,14 @@
 	"topic_filename_mapping": [
 		{
 			"topic_name": "clicks_topic",
-			"filename_pattern": "clicks_%d"
+			"filename_pattern": "clicks_%d",
+			"flattened_data": true
 			
 		},
 		{
 			"topic_name": "impressions_topic",
-			"filename_pattern": "impressions_%d"
+			"filename_pattern": "impressions_%d",
+			"flattened_data": false
 			
 		}
 	]

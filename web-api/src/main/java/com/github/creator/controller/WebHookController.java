@@ -26,7 +26,7 @@ public class WebHookController {
 		
 		if(producer.produce(body)) {
 			ObjectNode response = mapper.createObjectNode();
-			response.put("status", "sucess");
+			response.put("status", "success");
 			return ResponseEntity.ok().body(response);
 		}else {
 			ObjectNode response = mapper.createObjectNode();

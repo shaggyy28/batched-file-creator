@@ -1,0 +1,8 @@
+FROM openjdk:8-jdk-alpine
+RUN mkdir /app
+WORKDIR /app
+RUN mkdir data
+COPY target/kafka-batcher-0.0.1.jar kafka-batcher-0.0.1.jar
+EXPOSE 8080/tcp
+COPY application-docker.properties application.properties
+ENTRYPOINT ["java","-jar","/app/kafka-batcher-0.0.1.jar", "-Dspring.config.location=/app/application.properties"]

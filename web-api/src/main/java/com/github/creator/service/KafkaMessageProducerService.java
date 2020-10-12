@@ -17,13 +17,13 @@ public class KafkaMessageProducerService {
 	
 	public boolean produce(JsonNode node) {
 		
-		Map<String, String> topicEventMapping = MappingConfigResolver.getMappingConfigVo().getTopicEventMapping();
+		Map<String, String> topicEventMapping = MappingConfigResolver.getMappingConfigVo().getEventTopicMapping();
 	
-		String eventType = node.get("event_type").asText();
-		if(node.get("data").isContainerNode()) {
-			JsonNode data = node.get("data");
+		if(node.get("payload").isContainerNode()) {
+			JsonNode payload = node.get("payload");
+			String eventType = payload.get("event_type").asText();
 			String topicName = topicEventMapping.get(eventType);
-			template.send(topicName, data.toString());
+			template.send(topicName, payload.toString());
 		}
 		return true;
 	}

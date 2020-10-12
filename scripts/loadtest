@@ -1,0 +1,6 @@
+#! /bin/bash
+LOADTEST_FILE=${1}
+cat ${LOADTEST_FILE} | while read line 
+do
+   curl --request POST --header Content-type:application/json --data-binary "${line}" http://localhost:8080/post-data
+done

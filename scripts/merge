@@ -1,0 +1,9 @@
+#! /bin/bash
+IFS=',' read -r -a events <<< "${1}"
+for event  in ${events[@]}
+do
+	for file in $(ls ${event}_*)
+	do
+		cat ${file} >> ${event}_merged
+	done
+done 
