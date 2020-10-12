@@ -57,12 +57,15 @@ this file contains the mapping for event, topic, fileName,
 ```
 ### Testing
 clicks and impressions files with dummy data in `scripts` folder
+
 `loadtest` script can be used to post data to webhook
+
 __Usage__:
 ``` 
 lodtest <file with dummy payloads>
 ```
 `merge` script can be used to merge and check results.
+
 __Usage__:
 ```
 merge clicks,impressions
