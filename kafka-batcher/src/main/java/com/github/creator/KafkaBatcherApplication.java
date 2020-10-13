@@ -68,7 +68,7 @@ public class KafkaBatcherApplication {
 			@Qualifier(value = "osMap")Map<String, TopicWriterVo> fileNameMap) {
 	    return new CommandLineRunner() {
 	        public void run(String... args) throws Exception {
-	            executor.execute(new ConstrainCheckerThread(fileNameMap, timeThreshold, Long.parseLong(sizeThreshold), dataDir));
+	            executor.execute(new ConstrainCheckerThread(fileNameMap, timeThreshold, sizeThreshold, dataDir));
 	        }
 	    };
 	}

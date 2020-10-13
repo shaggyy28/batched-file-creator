@@ -11,9 +11,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.creator</groupId>
-	<artifactId>batched-file-creator</artifactId>
+	<artifactId>web-api</artifactId>
 	<version>0.0.1</version>
-	<name>batched-file-creator-api</name>
+	<name>web-api</name>
 
 	<properties>
 		<java.version>1.8</java.version>

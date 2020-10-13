@@ -1,0 +1,5 @@
+#! /bin/bash
+./mvnw clean package -DskipTests
+nohup java -jar kafka-batcher/target/kafka-batcher-0.0.1.jar -Dspring.config.location=./application-local.properties >> kafka-batcher.log 2>&1 &
+nohup java -jar web-api/target/web-api-0.0.1.jar -Dspring.config.location=./application-local.properties >> web-api.log 2>&1 &
+echo 'Application started in background and log in .log files'
