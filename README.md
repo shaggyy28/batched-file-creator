@@ -3,8 +3,8 @@ This application listens on a webhook and injects the data data recieved to the 
 ### Configuration
 ###### application.properties file
 This contents the configuration regarding the application, this file is given as command line arg
-- batched.file.creator.time.threshold=30m  in m/s
-- batched.file.creator.size.threshold=5000 in bytes
+- batched.file.creator.time.threshold=30m  units - m/s
+- batched.file.creator.size.threshold=5000KB  units - KB/MB
 - batched.file.creator.data.dir=/file/path/to/backup/dir
 ###### mapping-config.json
 this file contains the mapping for event, topic, fileName,
@@ -72,6 +72,13 @@ __Usage__:
 ```
 merge clicks,impressions
 ``` 
+### Running Locally
+- run `scripts/run_local` from root of the project, it will launch both kafka-consumer and web-api projects
+- will use application-local.properties for config
+- connect to kafka on localhost:9092 
+- logs will redirected to .log file
+
+
 ### Dockerizing
 `docker-compose.yml` file in project root contains the docker config to start 4 containers
 - web-api (dockerfile in web-api subproject)
@@ -79,5 +86,6 @@ merge clicks,impressions
 - kafka (bitnami prebuilt image)
 - zookeeper (bitnami prebuilt image)
 
+will use application-docker.properties for config present in both sub-projects
 `docker-compose up --build` starts the containers
 
