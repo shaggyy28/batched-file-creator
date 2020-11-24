@@ -1,5 +1,5 @@
 # BATCHED FILE CREATOR
-This application listens on a webhook and injects the data data recieved to the kafka topic, and the data from the kafka topic is dumped to the file depending upon the file size or time elapsed(which ever happend early).
+This application listens on a webhook and injects the data recieved to the kafka topic, and the data from the kafka topic is dumped to the file depending upon the file size or time elapsed(which ever happens early).
 ### Configuration
 ###### application.properties file
 This contents the configuration regarding the application, this file is given as command line arg
